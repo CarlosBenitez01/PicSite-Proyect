@@ -17,8 +17,8 @@
 .menu__container{
     display: flex;
     height: 80px;
-    justify-content: space-between;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -35,6 +35,9 @@ ul, li{
     justify-content: center;
 }
 
+.menu__container-ul a{
+    height: 100%;
+}
 
 .menu__logo{
     height: 80%;
@@ -178,28 +181,15 @@ li a{
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 
+/*menu*/
 
-/*-----------------------------Body-header------------------------------------------------*/
-
-.main__container-header{
+.buscador__container-center{
     width: 100%;
-    height: 100vh;
-    background-image: url(../multimedia/lake.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
     display: flex;
-}
-
-.header-content{
-    top: 0;right: 0;bottom: 0;left: 0;
-    margin: auto;
-    width: 1000px;
-    text-align: center;
-}
-
-.header-content h1, nav-ul p,.nav__ul__li-a{
-    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35px;
 }
 
 .buscador::placeholder{
@@ -216,98 +206,228 @@ li a{
 
 .buscador-container{
     height: 50px;
-    width: 80%;
-    margin: 25px auto;
-    border-radius: 25px;
+    width: 100%;
     position: relative;
 }
 
-.buscador-container div{
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 100%;
-    width: 10px;
+.buscador-container img{
+    position: absolute;    
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    top: 5px;
+    border-radius: 15px;
 }
 
 .buscador{
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
     outline: none;
     color: rgb(98, 98, 98);
     font-size: 15px;
     font-weight: bold;
     padding-left: 50px;
+    background-color: rgba(185, 185, 185, 0.176);
 }
 
-.nav-list nav-ul{
+/*---------------------------------Galeria tipos-------------------------------------*/
+
+.galeria_tipos{
+    margin-top: 50px;
+    padding: 0 16px;
+}
+
+.galeria__tipos-cont p{
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.galeria__tipos-menu{
     display: flex;
-}
-
-.nav-list{
-    display: flex;
-    justify-content: center;
-}
-
-.nav__ul-li, nav-ul p{
-    margin-right: 5px;
-}
-
-.nav__ul__li-a, nav-ul p{
-    font-size: 17px;
-}
-
-/*----------------------------------Body-------------------------------------------*/
-
-.menu__opciones-container{
+    justify-content: space-between;
+    margin: 30px 0;
     width: 100%;
-    height: 115px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.menu__opciones-content{
+.opc-menu{
     display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
-.opcion{
-    height: 100%;
-    border-radius: 25px;
+.tipos-opc{
     height: 50px;
+    color: rgb(72, 72, 72);
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    font-weight:700;
+    position: relative;
+}
+
+.arrow{
+    width: 13px;
+    height: 13px;
+    margin-left: 10px;
+    filter: invert(28%) sepia(20%) saturate(9%) hue-rotate(6deg) brightness(96%) contrast(98%);
+}
+
+.tipos-opc:hover{
+    cursor: pointer;
+}
+
+.tipos-opc > img{
     transition: .3s;
 }
 
-.opcion:hover{
+.tipos-opc:hover > img{
+    transform: rotate(180deg);
+}
+
+.tipos__menu-conf a .arrow{
+    transition: .3s;
+}
+
+.tipos__menu-conf:hover a .arrow{
+    transform: rotate(180deg);
+}
+
+.tipos__menu-conf{
+    --clip0: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --clip1: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    width: 100%;
+}
+
+.tipos__menu-conf > ul{
+    clip-path: var(--clip0);
+    width: 255px;
+    transition: .3s;
+    position: absolute;
+    top: 50px;
+    left: 1px;  
+}
+
+.tipos__menu-conf:hover > ul{
+    clip-path: var(--clip1);
+}
+
+.tipos__menu-conf{
+    z-index: 10;
+}
+
+.menu__tipos-submenu{
+    padding: 20px 20px;
+    background-color: white;
+    border: none;
+    border: 1px solid rgba(132, 132, 132, 0.418);
+}
+
+.submenu__opc-tipos{
+    position: relative;
+    z-index: 20;
+}
+
+.submenu__opc-tipos:hover{
     background-color: rgba(132, 132, 132, 0.121);
 }
 
-.opcion a{
-    height: 100%;
+.submenu__opc-tipos a{
     color: rgb(72, 72, 72);
-    margin: 0 30px;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.opcion a img{
-    width: 17px;
-    height: 17px;
-    vertical-align: middle;
-    margin-right: 10px;
 }
 
 .filterImg2{
-    filter: invert(28%) sepia(1%) saturate(532%) hue-rotate(316deg) brightness(98%) contrast(97%);
+    filter: invert(28%) sepia(20%) saturate(9%) hue-rotate(6deg) brightness(96%) contrast(98%);
 }
+
+.tipos__menu-conf > .tipos__menu-relevantes{
+    left: -96px;
+}
+
+.menu__tipos-colores{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.submenu__opc-colores{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 2px;
+}
+
+.tipos__menu-conf > .tipos__menu__conf-coloresul{
+    width: 265px;
+}
+
+.submenu__opc-colores{
+    transition: .2s;
+}
+
+.menu__tipos-colores > .submenu__opc-colores:hover{
+    opacity: .7;
+}
+
+/*------------colores---------------------*/
+.rojo{
+    background-color: red;
+}
+
+.naranja{
+    background-color: orange;
+}
+
+.amarillo{
+    background-color: yellow;
+}
+
+.verde{
+    background-color: green;
+}
+
+.celeste{
+    background-color: lightblue;
+}
+
+.azul{
+    background-color: blue;
+}
+
+.violeta{
+    background-color: violet;
+}
+
+.rosado{
+    background-color: pink;
+}
+
+.marron{
+    background-color: brown;
+}
+
+.negro{
+    background-color: black;
+}   
+
+
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*/....././././././///////////////////*/
+/*----------------------------------Body-------------------------------------------*/
 
 /*----------------------------------Galeria------------------------------------*/
 

@@ -17,8 +17,8 @@
 .menu__container{
     display: flex;
     height: 80px;
-    justify-content: space-between;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -35,6 +35,9 @@ ul, li{
     justify-content: center;
 }
 
+.menu__container-ul a{
+    height: 100%;
+}
 
 .menu__logo{
     height: 80%;
@@ -178,28 +181,16 @@ li a{
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 
+/*Buscador*/
 
-/*-----------------------------Body-header------------------------------------------------*/
 
-.main__container-header{
+.buscador__container-center{
     width: 100%;
-    height: 100vh;
-    background-image: url(../multimedia/lake.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
     display: flex;
-}
-
-.header-content{
-    top: 0;right: 0;bottom: 0;left: 0;
-    margin: auto;
-    width: 1000px;
-    text-align: center;
-}
-
-.header-content h1, nav-ul p,.nav__ul__li-a{
-    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35px;
 }
 
 .buscador::placeholder{
@@ -216,163 +207,57 @@ li a{
 
 .buscador-container{
     height: 50px;
-    width: 80%;
-    margin: 25px auto;
-    border-radius: 25px;
+    width: 100%;
     position: relative;
 }
 
-.buscador-container div{
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 100%;
-    width: 10px;
+.buscador-container img{
+    position: absolute;    
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    top: 5px;
+    border-radius: 15px;
 }
 
 .buscador{
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
     outline: none;
     color: rgb(98, 98, 98);
     font-size: 15px;
     font-weight: bold;
     padding-left: 50px;
+    background-color: rgba(185, 185, 185, 0.176);
 }
 
-.nav-list nav-ul{
-    display: flex;
-}
+/*-----------------------------Contenido--------------------------------------------*/
 
-.nav-list{
+.contenedorPrueba{
+    margin: auto;
+    border: 1px solid black;
     display: flex;
+    width: 90%;
+    height: 300px;
     justify-content: center;
-}
-
-.nav__ul-li, nav-ul p{
-    margin-right: 5px;
-}
-
-.nav__ul__li-a, nav-ul p{
-    font-size: 17px;
-}
-
-/*----------------------------------Body-------------------------------------------*/
-
-.menu__opciones-container{
-    width: 100%;
-    height: 115px;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.menu__opciones-content{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+.foto{
+    height: 60%;
+    width: 200px;
+    margin: 30px;
 }
 
-.opcion{
+.foto img{
     height: 100%;
-    border-radius: 25px;
-    height: 50px;
-    transition: .3s;
-}
-
-.opcion:hover{
-    background-color: rgba(132, 132, 132, 0.121);
-}
-
-.opcion a{
-    height: 100%;
-    color: rgb(72, 72, 72);
-    margin: 0 30px;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.opcion a img{
-    width: 17px;
-    height: 17px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.filterImg2{
-    filter: invert(28%) sepia(1%) saturate(532%) hue-rotate(316deg) brightness(98%) contrast(97%);
-}
-
-/*----------------------------------Galeria------------------------------------*/
-
-.galeria-container{
-    display: flex;
-    margin-bottom: 20px;
-    padding: 0 10px 10px 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.galeria-column{
-    flex: 25%;
-}
-
-.card{
     width: 100%;
-    padding: 5px 7px;
 }
 
-.card-img{
-    width: 100%;
-
-}
-
-@media (max-width: 1000px){
-    .galeria-column{
-        flex: 33.3%;
-    }
-}
-
-@media (max-width: 800px){
-    .galeria-column{
-        flex: 50%;
-    }
-}
-
-@media (max-width: 600px){
-    .galeria-column{
-        flex: 100%;
-    }
-}
-
-.btn-inicio{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.btn-inicio a{
-    border: 1px solid;
-    padding: 20px;
-    border-radius: 25px;
-    border: solid 1px rgb(136, 136, 136);
-    color: rgb(136, 136, 136);
-    font-weight: 900;
-    transition: .3s;
-}
-
-.btn-inicio > a:hover{
-    color: rgb(69, 69, 69);
-    border: solid 1px rgb(69, 69, 69);
+.info{
+    margin: 30px;
 }
 /*-----------------------------------Footer---------------------------------------*/
 
