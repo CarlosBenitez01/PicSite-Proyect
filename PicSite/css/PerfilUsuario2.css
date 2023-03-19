@@ -12,17 +12,13 @@
     background-attachment: fixed;
 }
 */
-
-a, li{
-    transition: .3s;
-}
 /*----------------------------------------------Menu----------------------------------------------------*/
 
 .menu__container{
     display: flex;
     height: 80px;
-    justify-content: space-between;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -39,6 +35,9 @@ ul, li{
     justify-content: center;
 }
 
+.menu__container-ul a{
+    height: 100%;
+}
 
 .menu__logo{
     height: 80%;
@@ -111,6 +110,7 @@ li a{
     margin-left: 20px;
     height: 65%;
     border-radius: 25px;
+    transition: .3s;
 }
 
 .opc-rgy:hover{
@@ -129,7 +129,6 @@ li a{
     width: 100%;
 }
 
-
 .menu__opciones-list1{
     --clip0: polygon(0 0, 100% 0, 100% 0, 0 0);
     --clip1: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -138,6 +137,7 @@ li a{
 .menu__opciones-list1 > ul{
     clip-path: var(--clip0);
     width: 255px;
+    transition: .3s;
 }
 
 .menu__opciones-list1:hover > ul{
@@ -163,10 +163,11 @@ li a{
     align-items: center;
     padding: 12px 10px;
     /*border-bottom: 1px solid #ffffff1e;*/
+    border-radius: 15px;
+    transition: .3s;
 }
 
 .submenu-opc:hover{
-    border-radius: 15px;
     background-color: #ffffff1e;
 }
 
@@ -192,61 +193,21 @@ li a{
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 
+/*Buscador*/
 
-/*-----------------------------Body-header------------------------------------------------*/
 
-.main__container-header{
+.buscador__container-center{
     width: 100%;
-    height: 100vh;
-    background-image: url(../multimedia/lake.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100%;
     display: flex;
-}
-
-.header-content{
-    top: 0;right: 0;bottom: 0;left: 0;
-    margin: auto;
-    width: 80%;
-    text-align: center;
-}
-
-.header-content h1, nav-ul p,.nav__ul__li-a{
-    color: white;
-}
-
-.buscador{
-    height: 50px;
-    width: 80%;
-    margin: 25px 0;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    color: rgb(98, 98, 98);
-    font-size: 15px;
-    font-weight: bold;
-    padding-left: 50px;
-}
-
-.buscador-container{
-    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35px;
 }
 
 .buscador::placeholder{
     font-size: 15px;
     color: rgb(98, 98, 98);
-}
-
-.buscador__logo-container{
-    height: 50px;
-    width: 60px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 100px;
-    top: 24px;
 }
 
 .filterImg-buscadorico{
@@ -256,73 +217,98 @@ li a{
     filter: invert(42%) sepia(0%) saturate(2746%) hue-rotate(333deg) brightness(90%) contrast(92%);
 }
 
-.nav-list nav-ul{
+.buscador-container{
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.buscador-container img{
+    position: absolute;    
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    top: 5px;
+    border-radius: 15px;
+}
+
+.buscador{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: rgb(98, 98, 98);
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 50px;
+    background-color: rgba(185, 185, 185, 0.176);
+}
+
+/*-----------------------------------Info usuario---------------------------------------*/
+.info-container{
+    width: 100%;
+}
+
+.usu__container-img{
+    padding: 10px;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+.usu__container-img, .info-container{
+    margin: auto;
+    text-align: center;
+}
+
+.usu__container-img img{
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    
+}
+
+.usu__container-info p{
+    color: rgb(69, 69, 69);
+    margin: 20px 30px 0;
+    font-size: 20px;
+}
+
+.aportes-header{
     display: flex;
+    margin-left: 20px;
+    align-items: center;
 }
 
-.nav-list{
-    display: flex;
-    justify-content: center;
-}
-
-.nav__ul-li, nav-ul p{
-    margin-right: 5px;
-}
-
-.nav__ul__li-a, nav-ul p{
+.aportes-header p{
+    color: rgb(69, 69, 69);
+    margin: 50px 20px 50px 20px;
     font-size: 17px;
 }
 
-/*----------------------------------Body-------------------------------------------*/
-
-.menu__opciones-container{
-    width: 100%;
-    height: 115px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu__opciones-content{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.opcion{
-    height: 100%;
+.aportes-header a{
     border-radius: 25px;
-    height: 50px;
+    height: 55px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,41,221,1) 0%, rgba(0,212,255,1) 100%);
 }
 
-.opcion:hover{
-    background-color: rgba(132, 132, 132, 0.215);
+/*
+.aportes-header a:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+*/
+
+.aportes-header a p{
+    color: #fff;
+    font-size: 17px;
 }
 
-.opcion a{
-    height: 100%;
-    color: rgb(72, 72, 72);
-    margin: 0 30px;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
 
-.opcion a img{
-    width: 17px;
-    height: 17px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.filterImg2{
-    filter: invert(28%) sepia(1%) saturate(532%) hue-rotate(316deg) brightness(98%) contrast(97%);
-}
-
-/*----------------------------------Galeria------------------------------------*/
-
-/*----------------------------------Galeria------------------------------------*/
+/*-----------------------------------Imagenes subidas---------------------------------------*/
 
 .galeria-container{
     display: flex;
@@ -364,29 +350,6 @@ li a{
     }
 }
 
-.btn-inicio{
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.btn-inicio a{
-    border: 1px solid;
-    padding: 20px;
-    border-radius: 25px;
-    border: solid 1px rgb(136, 136, 136);
-    color: rgb(136, 136, 136);
-    font-weight: 900;
-    transition: .3s;
-}
-
-.btn-inicio > a:hover{
-    color: rgb(69, 69, 69);
-    border: solid 1px rgb(69, 69, 69);
-}
 /*-----------------------------------Footer---------------------------------------*/
 
 .footer-container{
