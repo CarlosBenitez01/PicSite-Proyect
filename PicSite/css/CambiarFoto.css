@@ -117,6 +117,18 @@ li a{
     border: solid 1px rgb(69, 69, 69);
 }
 
+.opc-usu{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-left: 14px;
+}
+
+.opc-usu img{
+    width: 100%;
+}
+
 .menu__opciones-list1{
     --clip0: polygon(0 0, 100% 0, 100% 0, 0 0);
     --clip1: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
@@ -307,6 +319,7 @@ form{
     border: none;
     color: #fff;
     font-size: 17px;
+    cursor: pointer;
 }
 
 
