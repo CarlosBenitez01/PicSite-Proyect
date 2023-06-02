@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/perfil_usuario.css}" rel="stylesheet" href="../static/css/perfil_usuario.css">
+    <title>Perfil de usuario</title>
+    <link rel="icon" href="../static/multimedia/icons/PicSite backremoved.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a id="inicio"></a>
+        <nav class="menu__container">
+            <ul class="menu__container-ul">
+                <a th:href="@{/}">
+                    <li class="menu__logo-container">
+                        <img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+                    </li>
+                </a>
+            </ul>
+            <div class="buscador__container-center">
+                <form action="" class="buscador-container">
+                    <input type="text" placeholder="Busca las imagenes de PicSite aquí" class="buscador">                            
+                    <img src="../multimedia/icons/lupaSinFondo.png" alt="" class="filterImg-buscadorico buscador-ico">
+                </form>                    
+            </div>
+            <ul class="menu__opciones">
+                <li class="opc menu__opciones-list1">
+                    <a class="exp">Explorar</a>
+                    <ul>
+                        <div class="menu__opciones-submenu1">
+                            <li class="submenu-opc"><a href=""><img class="filterImg" src="../multimedia/icons/ilustaciones.ico">Ilustaciones</a></li>
+                            <li class="submenu-opc"><a href="./fotoPruebaWallpaper.html"><img class="filterImg" src="../multimedia/icons/wallpaper.ico">Wallpapers</a></li>
+                            <li class="submenu-opc"><a href=""><img class="filterImg" src="../multimedia/icons/camara.ico">Fotos</a></li>
+                            <li class="submenu-opc"><a href=""><img class="filterImg" src="../multimedia/icons/vector.ico">Vectores</a></li>
+                            <li class="submenu-opc gif"><a href=""><img class="filterImg" src="../multimedia/icons/gif.ico">Gifs</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <a th:href="@{/loginusu}"><li class="opc opc-log">Iniciar sesion</li></a>
+                <a th:href="@{/registrousu}"><li class="opc opc-rgy">Registrarme</li></a>
+                <div class="img__usu-container" th:if="${mostrarElemento}">
+					<a th:href="@{/home/perfil}">
+						<li class="opc opc-usu opc__usu-img"><img th:src="@{'/uploads/'+${imgusu.foto}}"></li>
+					</a>
+				</div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="info-container">
+            <div class="usu__container-img">
+                <div class="usu-img">
+					<a th:href="@{/perfil/cambiar-fotousu}"><img th:src="@{'/uploads/'+${infousu.foto}}" th:alt="${infousu.foto}"></a>
+				</div>
+            </div>
+            <div class="usu__container-info">
+                <p class="usu__info-nombre" th:text="${infousu.nombre}"></p>
+                <p class="usu__info-email" th:text="${infousu.email}"></p>
+            </div>
+        </div>
+        <div class="usu__container-aportes">
+            <div class="aportes-header">
+                <a th:href="@{/perfil/subir-imagenusu}" class="agregar__imagen-link">
+                    <p>Subir imagen</p>
+                </a>
+                <p>Mis aportaciones</p>
+            </div>
+            <div class="galeria-container aportes" >
+                
+				<div class="galeria-column">
+					<div th:each="imagenObj : ${galeriaList1}">
+						<div class="card"><img th:src="@{'/uploads/'+${imagenObj.nombreImg}}" th:alt="${imagenObj.nombreImg}" class="card-img"></div>	
+					</div>
+				</div>
+	
+				<div class="galeria-column">
+					<div th:each="imagenObj1 : ${galeriaList2}">
+						<div class="card"><img th:src="@{'/uploads/'+${imagenObj1.nombreImg}}" th:alt="${imagenObj1.nombreImg}" class="card-img"></div>
+					</div>
+				</div>
+	
+				<div class="galeria-column">
+					<div th:each="imagenObj2 : ${galeriaList3}">
+						<div class="card"><img th:src="@{'/uploads/'+${imagenObj2.nombreImg}}" th:alt="${imagenObj2.nombreImg}" class="card-img"></div>	
+					</div>
+				</div>
+	
+				<div class="galeria-column">
+					<div th:each="imagenObj3 : ${galeriaList4}">
+							<div class="card"><img th:src="@{'/uploads/'+${imagenObj3.nombreImg}}" th:alt="${imagenObj3.nombreImg}" class="card-img"></div>
+					</div>
+				</div>
+				
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="col1">
+                <div class="menu__logo-container logo__footer menu__logo-container-footer">
+                    <img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+                </div>
+                <p>Galería de imágenes con cientos de fotos compartidas por nuestra comunidad.</p>
+                <nav class="links">
+                    <li class="facebook-cont ico-cont">
+                        <a href="https://www.facebook.com/profile.php?id=100090251656509" target="_blank" class="a-face"><img src="../multimedia/icons/Facebook.ico" alt="" class="face-ico img-ico"></a>
+                    </li>
+                    <li class="instagram-cont ico-cont">
+                        <a href="https://www.instagram.com/piccsite/?hl=es" target="_blank" class="a-insta"><img src="../multimedia/icons/Instagram.ico" alt="" class="insta-ico img-ico"></a>
+                    </li>
+                    <li class="twitter-cont ico-cont">
+                        <a href="https://twitter.com/pic_site" target="_blank" class="a-twit"><img src="../multimedia/icons/Twitter.ico" alt="" class="twit-ico img-ico"></a>
+                    </li>
+                </nav>
+            </div>
+            <div class="col PicSite">
+                <h4 class="col-tittle">PicSite</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a href="" class="footer-a">Nuestra selección</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Imágenes populares</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Colecciones populares</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Busquedas populares</a></li>
+                </nav>
+            </div>
+            <div class="col comunidad">
+                <h4 class="col-tittle">Comunidad</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a th:href="@{/comunidad/blog}" class="footer-a">Blog</a></li>
+                    <li class="footer-opc"><a th:href="@{/comunidad/creadores}" class="footer-a">Creadores</a></li>
+                </nav>
+            </div>
+            <div class="col nosotros">
+                <h4 class="col-tittle">Conócenos</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a th:href="@{/conocenos/nosotros}" class="footer-a">A cerca de nosotros</a></li>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

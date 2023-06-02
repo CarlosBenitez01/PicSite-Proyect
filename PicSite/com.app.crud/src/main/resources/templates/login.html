@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/login.css}" rel="stylesheet" href="../static/css/login.css">
+    <title>Login</title>
+    <link th:href="@{/multimedia/icons/PicSite backremoved.png}" rel="icon" href="../static/multimedia/icons/PicSite backremoved.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="menu__container">
+            <ul>
+                <li class="menu__logo-container">
+                    <img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+                </li>
+            </ul>
+            <ul class="menu__opciones">
+                <li class="opc">
+                    <a class="menu__opciones-li white" th:href="@{/}">Menu principal</a>
+                </li>
+                <li class="menu__opciones-a">
+                    <a th:href="@{/registrousu}"><div class="opc white">Registrarse</div></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!--<div class="main__container" th:if="${desdeElBlog} != true">-->
+	<div class="main__container" th:if="${desdeBlog}">
+        <form th:action="@{/logindesdeblog}" th:object="${usuario}" method="post" class="form">
+            <div class="img__container">
+                <img src="../multimedia/usuario1.png" alt="User image" class="usu__img">
+            </div>
+            <div class="form__body">
+                <h1>INICIAR SESIÓN</h1>
+				<div class="form-group">
+					<input type="text" name="nombre" th:field="*{nombre}" class="form__input" placeholder="Nombre de usuario"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				</div>
+                
+				<div class="form-group">
+					<input type="password" name="password" th:field="*{password}" class="form__input" placeholder="Contraseña"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+				</div>
+                <div class="button__container">
+                    <button type="submit" class="btn form__btn"><a>Iniciar sesión</a></button>
+                </div>
+
+                <p class="form__p">¿Aún no tienes una cuenta? <a th:href="@{/registrousu}">Registrate</a></p>
+
+            </div>
+        </form>
+    </div>
+    <div class="main__container" th:if="${desdeBlog == false}">
+        <form th:action="@{/login}" th:object="${usuario}" method="post" class="form">
+            <div class="img__container">
+                <img src="../multimedia/usuario1.png" alt="User image" class="usu__img">
+            </div>
+            <div class="form__body">
+                <h1>INICIAR SESIÓN</h1>
+				<div class="form-group">
+					<input type="text" name="nombre" th:field="*{nombre}" class="form__input" placeholder="Nombre de usuario"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				</div>
+                
+				<div class="form-group">
+					<input type="password" name="password" th:field="*{password}" class="form__input" placeholder="Contraseña"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+				</div>
+                <div class="button__container">
+                    <button type="submit" class="btn form__btn"><a>Iniciar sesión</a></button>
+                </div>
+
+                <p class="form__p">¿Aún no tienes una cuenta? <a th:href="@{/registrousu}">Registrate</a></p>
+
+            </div>
+        </form>
+    </div>
+    <!--<div class="main__container" th:if="${desdeElBlog}">
+        <form th:action="@{/loginb}" th:object="${usuario}" method="post" class="form">
+            <div class="img__container">
+                <img src="../multimedia/usuario1.png" alt="User image" class="usu__img">
+            </div>
+            <div class="form__body">
+                <h1>INICIAR SESIÓN</h1>
+				<div class="form-group">
+					<input type="text" name="nombre" th:field="*{nombre}" class="form__input" placeholder="Nombre de usuario"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+				</div>
+                
+				<div class="form-group">
+					<input type="password" name="password" th:field="*{password}" class="form__input" placeholder="Contraseña"></input>
+                	<small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
+				</div>
+                <div class="button__container">
+                    <button type="submit" class="btn form__btn"><a>Iniciar sesión</a></button>
+                </div>
+
+                <p class="form__p">¿Aún no tienes una cuenta? <a th:href="@{/registrousu}">Registrate</a></p>
+
+            </div>
+        </form>
+    </div>-->
+</body>
+</html>

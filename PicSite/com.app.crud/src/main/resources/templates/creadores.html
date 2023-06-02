@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/creadores.css}" rel="stylesheet" href="../static/css/creadores.css">
+    <title>Comunidad</title>
+    <link th:href="@{/multimedia/icons/PicSite backremoved.png}" rel="icon" href="../static/multimedia/icons/PicSite backremoved.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+		<a id="inicio"></a>
+		<nav class="menu__container">
+			<ul class="menu__container-ul">
+				<a th:href="@{/}">
+					<li class="menu__logo-container">
+						<img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+					</li>
+				</a>
+			</ul>
+			<div class="buscador__container-center">
+				<form action="" class="buscador-container">
+					<input type="text" autocomplete="off" placeholder="Busca las imagenes de PicSite aquí" class="buscador" name="buscador" id="buscador" onclick="cambiarEstiloBuscador()" onblur="regresarEstiloBuscador()" onkeydown="buscarConEnter(event)">
+					<img src="../multimedia/icons/lupaSinFondo.png" alt="" class="filterImg-buscadorico buscador-ico">
+					<ul class="menu__filtros-busqueda" id="menu__filtros-busqueda">
+						<div>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="ilustracion"
+								onclick="enviarOpcionSeleccionada(event)">Ilustraciones</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="verde"
+								onclick="enviarOpcionSeleccionada(event)">Verde</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="blanco"
+								onclick="enviarOpcionSeleccionada(event)">Blanco</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="wallpaper"
+								onclick="enviarOpcionSeleccionada(event)">Wallpapers</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="foto"
+								onclick="enviarOpcionSeleccionada(event)">Fotos</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="azul"
+								onclick="enviarOpcionSeleccionada(event)">Azul</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="morado"
+								onclick="enviarOpcionSeleccionada(event)">Morado</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="vector"
+								onclick="enviarOpcionSeleccionada(event)">Vectores</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="gif"
+								onclick="enviarOpcionSeleccionada(event)">Gifs</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="negro"
+								onclick="enviarOpcionSeleccionada(event)">Negro</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="personas"
+								onclick="enviarOpcionSeleccionada(event)">Personas</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="animales"
+								onclick="enviarOpcionSeleccionada(event)">Animales</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="cocina"
+								onclick="enviarOpcionSeleccionada(event)">Cocina</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="videojuegos"
+								onclick="enviarOpcionSeleccionada(event)">Video juegos</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="paisajes"
+								onclick="enviarOpcionSeleccionada(event)">Paisajes</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="edificios"
+								onclick="enviarOpcionSeleccionada(event)">Edificios</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="transporte"
+								onclick="enviarOpcionSeleccionada(event)">Transporte</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="educacion"
+								onclick="enviarOpcionSeleccionada(event)">Educacion</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="tecnologia"
+								onclick="enviarOpcionSeleccionada(event)">Tecnologia</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="rojo"
+								onclick="enviarOpcionSeleccionada(event)">Rojo</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="naranja"
+								onclick="enviarOpcionSeleccionada(event)">Naranja</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="amarillo"
+								onclick="enviarOpcionSeleccionada(event)">Amarillo</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="gatos"
+								onclick="enviarOpcionSeleccionada(event)">Gatos</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="perros"
+								onclick="enviarOpcionSeleccionada(event)">Perros</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="naturaleza"
+								onclick="enviarOpcionSeleccionada(event)">Naturaleza</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="comida"
+								onclick="enviarOpcionSeleccionada(event)">Comida</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="negocio"
+								onclick="enviarOpcionSeleccionada(event)">Negocio</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="logo"
+								onclick="enviarOpcionSeleccionada(event)">Logo</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="hogar"
+								onclick="enviarOpcionSeleccionada(event)">Hogar</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="rosado"
+								onclick="enviarOpcionSeleccionada(event)">Rosado</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="marron"
+								onclick="enviarOpcionSeleccionada(event)">Marron</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="playa"
+								onclick="enviarOpcionSeleccionada(event)">Playa</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="oceano"
+								onclick="enviarOpcionSeleccionada(event)">Oceano</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="viaje"
+								onclick="enviarOpcionSeleccionada(event)">Viaje</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="espacio"
+								onclick="enviarOpcionSeleccionada(event)">Espacio</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="coche"
+								onclick="enviarOpcionSeleccionada(event)">Coche</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="motocicleta"
+								onclick="enviarOpcionSeleccionada(event)">Motocicleta</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="cielo"
+								onclick="enviarOpcionSeleccionada(event)">Cielo</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="dinero"
+								onclick="enviarOpcionSeleccionada(event)">Dinero</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="festividad"
+								onclick="enviarOpcionSeleccionada(event)">Festividad</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="cultura"
+								onclick="enviarOpcionSeleccionada(event)">Cultura</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="mapa"
+								onclick="enviarOpcionSeleccionada(event)">Mapa</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="libro"
+								onclick="enviarOpcionSeleccionada(event)">Libro</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="cine"
+								onclick="enviarOpcionSeleccionada(event)">Cine</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="oscuro"
+								onclick="enviarOpcionSeleccionada(event)">Oscuro</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="lluvia"
+								onclick="enviarOpcionSeleccionada(event)">Lluvia</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="gimnasio"
+								onclick="enviarOpcionSeleccionada(event)">Gimnasio</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="danza"
+								onclick="enviarOpcionSeleccionada(event)">Danza</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="fantasia"
+								onclick="enviarOpcionSeleccionada(event)">fantasia</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="muebles"
+								onclick="enviarOpcionSeleccionada(event)">muebles</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="relajante"
+								onclick="enviarOpcionSeleccionada(event)">relajante</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="moderno"
+								onclick="enviarOpcionSeleccionada(event)">moderno</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="grafiti"
+								onclick="enviarOpcionSeleccionada(event)">grafiti</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="arte"
+								onclick="enviarOpcionSeleccionada(event)">arte</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="luces"
+								onclick="enviarOpcionSeleccionada(event)">luces</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="boda"
+								onclick="enviarOpcionSeleccionada(event)">boda</a>
+							</li>
+							<li class="filtro-busqueda" id="filtro-busqueda">
+								<a class="filtro-a" data-opcion="deportes"
+								onclick="enviarOpcionSeleccionada(event)">deportes</a>
+							</li>
+						</div>
+					</ul>
+				</form>
+			</div>
+			<ul class="menu__opciones">
+				<li class="opc menu__opciones-list1">
+					<a class="exp">Explorar</a>
+					<ul>
+						<div class="menu__opciones-submenu1">
+							<li class="submenu-opc"><a data-opcion="ilustracion"
+									onclick="enviarOpcionSeleccionada(event)"><img data-opcion="ilustracion"
+										onclick="enviarOpcionSeleccionada(event)" class="filterImg"
+										src="../multimedia/icons/ilustaciones.ico">Ilustraciones</a></li>
+							<li class="submenu-opc"><a data-opcion="wallpaper"
+									onclick="enviarOpcionSeleccionada(event)"><img data-opcion="wallpaper"
+										onclick="enviarOpcionSeleccionada(event)" class="filterImg"
+										src="../multimedia/icons/wallpaper.ico">Wallpapers</a></li>
+							<li class="submenu-opc"><a data-opcion="foto" onclick="enviarOpcionSeleccionada(event)"><img
+										data-opcion="foto" onclick="enviarOpcionSeleccionada(event)" class="filterImg"
+										src="../multimedia/icons/camara.ico">Fotos</a></li>
+							<li class="submenu-opc"><a data-opcion="vector"
+									onclick="enviarOpcionSeleccionada(event)"><img data-opcion="vector"
+										onclick="enviarOpcionSeleccionada(event)" class="filterImg"
+										src="../multimedia/icons/vector.ico">Vectores</a></li>
+							<li class="submenu-opc gif"><a data-opcion="gif"
+									onclick="enviarOpcionSeleccionada(event)"><img data-opcion="gif"
+										onclick="enviarOpcionSeleccionada(event)" class="filterImg"
+										src="../multimedia/icons/gif.ico">Gifs</a></li>
+						</div>
+					</ul>
+				</li>
+				<a th:href="@{/loginusu}" th:if="${sinLogYRy}">
+					<li class="opc opc-log">Iniciar sesion</li>
+				</a>
+				<a th:href="@{/registrousu}" th:if="${sinLogYRy}">
+					<li class="opc opc-rgy">Registrarme</li>
+				</a>
+				<div class="img__usu-container" th:if="${mostrarElemento}">
+
+					<!--th:if="imgusu != null" th:src="@{'/uploads/'+${imgusu.nombreImg}}"-->
+					<li class="opc opc-usu opc__usu-img">
+						<img th:src="@{'/uploads/'+${imgusu.foto}}">
+						<div>
+							<div class="menu-usuario">
+								<div class="nombre-usuario">
+									<p th:text="${objusu.nombre}"></p>
+								</div>
+								<div class="linea"></div>
+								<a th:href="@{/cambiarVariable}">
+									<div class="perfil-usuario">
+										Tu perfil
+									</div>
+								</a>
+								<a th:href="@{/cerrarsesion}">
+									<div class="cerrar-sesion">
+										Cerrar sesión
+									</div>
+								</a>
+								<div class="linea"></div>
+								<div class="menu__usu-links">
+									<div class="facebook">
+										<a href="https://www.facebook.com/profile.php?id=100090251656509"
+											target="_blank" class="a-face"><img src="../multimedia/icons/Facebook.ico"
+												class="img-redes"></a>
+									</div>
+									<div class="instagram">
+										<a href="https://www.instagram.com/piccsite/?hl=es" target="_blank"
+											class="a-insta"><img src="../multimedia/icons/Instagram.ico"
+												class="img-redes"></a>
+									</div>
+									<div class="twitter">
+										<a href="https://twitter.com/pic_site" target="_blank" class="a-twit"><img
+												src="../multimedia/icons/Twitter.ico" class="img-redes"></a>
+									</div>
+								</div>
+								<div class="linea"></div>
+								<a th:href="@{/donacionesredirect}">Realizar una donación</a>
+							</div>
+						</div>
+					</li>
+				</div>
+			</ul>
+		</nav>
+	</header>
+    
+    <h1 class="creadores-h1"><span th:text="${numerodecreadores}"></span> Creadores</h1>
+    <div class="main-container">
+        <div class="creadores-container" th:each="creador : ${CreadoresList}">
+
+            <div class="creador__card-container">
+                <div class="creador__card">
+                    <img class="creador__card-img" th:src="@{'/uploads/'+${creador.foto}}">
+                    <a th:href="@{'/perfil/'+${creador.id}+'?userId='+${creador.id}}" class="creador__card-a"><p class="creador__card-p" th:text="${creador.nombre}"></p></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="unirse-container">
+        <img src="../multimedia/icons/iconoUsuAzul.png">
+        <a th:href="@{/registrousu}">
+            <div class="unirme">Únete, es ¡gratis!</div>
+        </a>
+    </div>
+
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="col1">
+                <div class="menu__logo-container logo__footer menu__logo-container-footer">
+                    <img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+                </div>
+                <p>Galería de imágenes con cientos de fotos compartidas por nuestra comunidad.</p>
+                <nav class="links">
+                    <li class="facebook-cont ico-cont">
+                        <a href="https://www.facebook.com/profile.php?id=100090251656509" target="_blank" class="a-face"><img src="../multimedia/icons/Facebook.ico" alt="" class="face-ico img-ico"></a>
+                    </li>
+                    <li class="instagram-cont ico-cont">
+                        <a href="https://www.instagram.com/piccsite/?hl=es" target="_blank" class="a-insta"><img src="../multimedia/icons/Instagram.ico" alt="" class="insta-ico img-ico"></a>
+                    </li>
+                    <li class="twitter-cont ico-cont">
+                        <a href="https://twitter.com/pic_site" target="_blank" class="a-twit"><img src="../multimedia/icons/Twitter.ico" alt="" class="twit-ico img-ico"></a>
+                    </li>
+                </nav>
+            </div>
+            <!--<div class="col PicSite">
+                <h4 class="col-tittle">PicSite</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a href="" class="footer-a">Nuestra selección</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Imágenes populares</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Colecciones populares</a></li>
+                    <li class="footer-opc"><a href="" class="footer-a">Busquedas populares</a></li>
+                </nav>
+            </div>-->
+            <div class="col comunidad">
+                <h4 class="col-tittle">Comunidad</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a th:href="@{/comunidad/blog}" class="footer-a">Blog</a></li>
+                    <li class="footer-opc"><a th:href="@{/comunidad/creadores}" class="footer-a">Creadores</a></li>
+                </nav>
+            </div>
+            <div class="col nosotros">
+                <h4 class="col-tittle">Conócenos</h4>
+                <nav class="footer__opc-container">
+                    <li class="footer-opc"><a th:href="@{/conocenos/nosotros}" class="footer-a">A cerca de nosotros</a></li>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script th:src="@{/js/funcionesComentarios.js}"></script>
+    <script th:src="@{/js/funciones.js}"></script>
+</body>
+</html>

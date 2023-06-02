@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{css/registro.css}"  rel="stylesheet" href="../static/css/registro.css">
+    <title>Registro</title>
+    <link rel="icon" href="../static/multimedia/icons/PicSite backremoved.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="menu__container">
+            <ul>
+                <li class="menu__logo-container">
+                    <img class="menu__logo" src="../multimedia/PicSiteLogo.png">
+                </li>
+            </ul>
+            <ul class="menu__opciones">
+                <li class="opc"><a class="menu__opciones-li white" th:href="@{/}">Menu principal</a></li>
+                <li class="menu__opciones-a">
+                    <a th:href="@{/loginusu}"><div class="opc white">Iniciar sesion</div></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="main__container">
+        <form th:action="@{/registro}" th:object="${usuario}" method="post" class="form">
+            <div class="img__container">
+                <img src="../multimedia/usuario1.png" alt="User image" class="usu__img">
+            </div>
+            <div class="form__body">
+                <h1>REGISTRO</h1>
+
+                <input type="text" name="nombre" th:field="*{nombre}" class="form__input" placeholder="Nombre de usuario" required></input>
+                <input type="email" name="email" th:field="*{email}" class="form__input" placeholder="Correo electrónico" required></input>
+                <input type="password" name="password" th:field="*{password}" class="form__input" placeholder="Contraseña" required></input>
+
+                <div class="button__container">
+                    <button type="submit" class="btn form__btn"><a>Registrarse</a></button>
+                </div>
+
+                <p class="form__p">¿Ya tienes una cuenta? <a th:href="@{/loginusu}">Iniciar sesión</a></p>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

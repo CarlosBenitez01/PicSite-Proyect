@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <title>Listado de estudiantes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" data-bs-theme="dark">
+        <a class="navbar-brand" href="#">Control de estudiantes</a>
+
+        <!--Navbar Links-->
+        <div class="collapse navbar-collapse" id="colapsiblenavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a th:href="@{/estudiantes}" class="nav-link">Control de estudiantes</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h1>Lista de estudiantes</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <a th:href="@{/estudiantes/nuevo}" class="btn btn-primary btn-sm mb3">Agregar estudiante</a>
+          </div>
+        </div>
+        <br>
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="estudiante : ${estudiantes}">
+                <td th:text="${estudiante.nombre}">Nombre</td>
+                <td th:text="${estudiante.apellido}">Apellido</td>
+                <td th:text="${estudiante.email}">Email</td>
+                <td>
+                  <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
+                  <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
